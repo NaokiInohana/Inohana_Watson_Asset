@@ -1,0 +1,23 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+
+# environment
+.env
+
+# credentials
+credentials.json
+
+# compiled CSS
+/src/*.css
+
+# Code coverage
+coverage

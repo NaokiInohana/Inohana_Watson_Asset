@@ -1,0 +1,52 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "async": "^2.5.0",
+    "basic-auth-connect": "1.0.0",
+    "body-parser": "1.15.1",
+    "cfenv": "1.0.x",
+    "cloudant": "^1.10.0",
+    "date-utils": "^1.2.21",
+    "dotenv": "^4.0.0",
+    "express": "4.13.4",
+    "express-csv": "0.6.0",
+    "nano": "*",
+    "node-sass-chokidar": "0.0.3",
+    "npm-lifecycle": "^2.0.0",
+    "npm-run-all": "^4.0.2",
+    "path": "^0.12.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "replace": "^0.3.0",
+    "request": "^2.83.0",
+    "underscore": "^1.8.3",
+    "uuid": "2.0.2",
+    "vcap_services": "^0.2.0",
+    "watson-react-components": "^0.6.9"
+  },
+  "devDependencies": {
+    "codecov": "^3.0.0",
+    "eslint": "^4.3.0",
+    "eslint-plugin-react": "^7.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "nock": "^9.0.14",
+    "react-scripts": "1.0.10",
+    "watson-developer-cloud": "^2.41.1"
+  },
+  "scripts": {
+    "start": "npm-run-all -p watch-css start-js",
+    "autofix": "eslint . --fix",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "build": "npm run build-css && react-scripts build",
+    "codecov": "npm run test && ./node_modules/.bin/codecov",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "start-js": "react-scripts start",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha tests/**/* -- -R spec",
+    "train": "cp .env.example .env && node ./train-conversation.js && node ./train-discovery.js",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+  }
+}

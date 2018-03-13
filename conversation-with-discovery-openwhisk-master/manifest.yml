@@ -1,0 +1,18 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: tmc-test
+  host: tmc-test
+  disk_quota: 1024M
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git  
+
+  services: 
+   - tmc-conversation-discove-conversati-1516258xxxxx
+   - tmc-conversation-discove-discovery-15162584xxxx
+   - Cloudant NoSQL DB-xx
+
+
+
+

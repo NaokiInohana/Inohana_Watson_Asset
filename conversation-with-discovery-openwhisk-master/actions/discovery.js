@@ -43,18 +43,16 @@
            return reject(err);
          }
                  
-         var i = 0;
+          var i = 0;
          var discoveryResults = [];
          while (data.results[i] && i < 3 ) {
-           let body = data.results[i].contentHtml;
-           discoveryResults[i] = {
-             body: body,
-             bodySnippet: (body.length < 144 ? body : (body.substring(0,144) + '...')).replace(/<\/?[a-zA-Z]+>/g, ''),
-             confidence: data.results[i].result_metadata.score,
-             id: data.results[i].id,
-             sourceUrl: data.results[i].sourceUrl,
-             title: data.results[i].title
-           };
+           let body = data.results[i].text;
+         　 discoveryResults[i] = {
+              body: body,
+              bodySnippet: body,
+              id: data.results[i].id,
+              title: data.results[i].title
+            };
            i++;
          }
                  
